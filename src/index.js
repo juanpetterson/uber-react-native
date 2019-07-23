@@ -6,8 +6,6 @@ import store from './store';
 
 import Routes from '~/routes';
 
-import('dotenv').config();
-
 const App = () => (
   <Provider store={store}>
     <Routes />

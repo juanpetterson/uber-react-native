@@ -3,6 +3,7 @@ import { View, Image } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import Geocoder from 'react-native-geocoding';
 
+import { GOOGLE_MAPS_API_KEY } from 'react-native-dotenv';
 import Search from '../Search';
 import Directions from '../Directions';
 import Details from '../Details';
@@ -20,7 +21,7 @@ import {
   LocationTimeTextSmall,
 } from './styles';
 
-Geocoder.init('AIzaSyBKKHyGkO5ZQGvgd2DR2KPO6Fd9G-5sEqc');
+Geocoder.init(GOOGLE_MAPS_API_KEY);
 
 export default class Map extends Component {
   state = {
@@ -87,7 +88,6 @@ export default class Map extends Component {
           region={region}
           showsUserLocation
           loadingEnabled
-          
           ref={el => (this.mapView = el)}
         >
           {destination && (
